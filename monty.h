@@ -41,5 +41,6 @@ typedef struct instruction_s
 
 void _push(stack_t **head, unsigned int number);
 void _pall(stack_t **head, unsigned int number);
+int run(char *command, stack_t **head, unsigned int counter, FILE *script);
 
 #endif

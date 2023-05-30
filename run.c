@@ -14,7 +14,8 @@ int run(char *command, stack_t **stack, unsigned int counter, FILE *script)
 	char *op;
 
 	instruction_t ops[] = {
-		{"push", _push}, {"pall", _pall}, {"pint", _pint}, 
+		{"push", _push}, {"pall", _pall}, {"pint", _pint},
+		{"pop", _pop},	
 		{NULL, NULL}
 	};
 

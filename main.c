@@ -1,5 +1,6 @@
 #include "monty.h"
 
+
 global_t globals = { NULL, NULL, NULL };
 
 /**
@@ -11,13 +12,12 @@ global_t globals = { NULL, NULL, NULL };
 int main(int argc, char *argv[])
 {
 	ssize_t readLine;
-       	unsigned int lineNo;
+	unsigned int lineNo;
 	size_t size;
 	FILE *script;
 	char *command;
 	stack_t *stack = NULL;
 
-	/* check the arg count, exit on error*/
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
@@ -29,7 +29,6 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-
 	readLine = 1;
 	size = 60;
 	globals.script = script;

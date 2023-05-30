@@ -41,24 +41,24 @@ void _push(stack_t **head, unsigned int number)
 		for (; globals.args[j] != '\0'; j++)
 		{
 			if (globals.args[j] > 57 || globals.args[j] < 48)
-				flag = 1; 
+				flag = 1;
 		}
 		if (flag == 1)
-		{ 
+		{
 			fprintf(stderr, "L%d: usage: push integer\n", number);
 			fclose(globals.script);
 			free(globals.command);
 			free_stack(*head);
-			exit(EXIT_FAILURE); 
+			exit(EXIT_FAILURE);
 		}
 	}
 	else
-	{ 
+	{
 		fprintf(stderr, "L%d: usage: push integer\n", number);
 		fclose(globals.script);
 		free(globals.command);
 		free_stack(*head);
-		exit(EXIT_FAILURE); 
+		exit(EXIT_FAILURE);
 	}
 	n = atoi(globals.args);
 	addnode(head, n);

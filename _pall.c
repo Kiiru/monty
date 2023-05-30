@@ -10,8 +10,8 @@
 void _pall(stack_t **head, unsigned int number)
 {
 	stack_t *top;
-	number = number;
 
+	number = number;
 	top = *head;
 	if (top == NULL)
 		return;

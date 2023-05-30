@@ -1,5 +1,7 @@
 #include "monty.h"
 
+global_t globals = { NULL, NULL, NULL };
+
 /**
  * main - monty code interpreter entry
  * @argc: number of arguments
@@ -8,10 +10,12 @@
  */
 int main(int argc, char *argv[])
 {
-	int readLine, counter;
+	ssize_t readLine;
+       	unsigned int lineNo;
 	size_t size;
 	FILE *script;
 	char *command;
+	stack_t *stack = NULL;
 
 	/* check the arg count, exit on error*/
 	if (argc != 2)
@@ -27,15 +31,18 @@ int main(int argc, char *argv[])
 	}
 
 	readLine = 1;
-	size = 0;
+	size = 60;
+	globals.script = script;
+	lineNo = 0;
 	while (readLine > 0)
 	{
 		command = NULL;
 		readLine = getline(&command, &size, script);
-		counter++;
+		globals.command = command;
+		lineNo++;
 		if (readLine > 0)
 		{
-			// run the command
+			run(command, &stack, lineNo, script);
 		}
 		free(command);
 	}

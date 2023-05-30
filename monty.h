@@ -1,6 +1,7 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#include <stddef.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -8,6 +9,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <ctype.h>
+#include <errno.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -46,16 +48,18 @@ typedef struct instruction_s
  * @args: command arguments
  * Description: variables globally available in the prog
  */
-typedef struct global_s
+typedef struct glob_s
 {
 	char *command;
 	FILE *script;
 	char *args;
-}
-extern global_s globals;
+} global_t;
+extern global_t globals;
 void _push(stack_t **head, unsigned int number);
 void addnode(stack_t **head, int n);
+void free_stack(stack_t *head);
 void _pall(stack_t **head, unsigned int number);
 int run(char *command, stack_t **head, unsigned int counter, FILE *script);
+int getline(char **lineptr, size_t *n, FILE *stream);
 
 #endif

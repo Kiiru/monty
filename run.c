@@ -11,7 +11,7 @@
 int run(char *command, stack_t **stack, unsigned int counter, FILE *script)
 {
 	unsigned int i;
-	char *op, *arg;
+	char *op;
 
 	instruction_t ops[] = {
 		{"push", _push}, {"pall", _pall},
@@ -25,6 +25,7 @@ int run(char *command, stack_t **stack, unsigned int counter, FILE *script)
 		return (0);
 	
 	i = 0;
+	globals.args = strtok(NULL, " \n\t");
 	while (ops[i].opcode && op)
 	{
 		if (strcmp(op, ops[i].opcode) == 0)

@@ -60,6 +60,7 @@ void addnode(stack_t **head, int n);
 void free_stack(stack_t *head);
 void _pall(stack_t **head, unsigned int number);
 int run(char *command, stack_t **head, unsigned int counter, FILE *script);
+void _pint(stack_t **head, unsigned int number);
 /* int getline(char **lineptr, size_t *n, FILE *stream); */
 
 #endif

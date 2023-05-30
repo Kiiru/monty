@@ -64,6 +64,7 @@ void _pint(stack_t **head, unsigned int number);
 void _pop(stack_t **head, unsigned int number);
 void _swap(stack_t **head, unsigned int number);
 void _add(stack_t **head, unsigned int number);
+void _nop(stack_t **head, unsigned int number);
 /* int getline(char **lineptr, size_t *n, FILE *stream); */
 
 #endif

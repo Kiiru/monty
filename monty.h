@@ -39,6 +39,18 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct global_s - global variables, configs
+ * @command: line content
+ * @script: pointer to monty file
+ * Description: variables globally available in the prog
+ */
+typedef struct global_s
+{
+	char *command;
+	FILE *script;
+}
+extern global_s globals;
 void _push(stack_t **head, unsigned int number);
 void _pall(stack_t **head, unsigned int number);
 int run(char *command, stack_t **head, unsigned int counter, FILE *script);

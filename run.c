@@ -14,7 +14,8 @@ int run(char *command, stack_t **stack, unsigned int counter, FILE *script)
 	char *op, *arg;
 
 	instruction_t ops[] = {
-		{"push", _push}, {"pall", _pall}
+		{"push", _push}, {"pall", _pall},
+		{NULL, NULL}
 	};
 
 	/* Tokenize the command string to handle space*/
@@ -36,5 +37,11 @@ int run(char *command, stack_t **stack, unsigned int counter, FILE *script)
 	if (op && ops[i].opcode == NULL)
 	{
 		/*hundle unknown instruction*/
+		fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
+		fclose(script);
+		free(command);
+		free_stack(*stack);
+		exit(EXIT_FAILURE);
 	}
+	return (1);
 }

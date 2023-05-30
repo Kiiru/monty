@@ -43,15 +43,18 @@ typedef struct instruction_s
  * struct global_s - global variables, configs
  * @command: line content
  * @script: pointer to monty file
+ * @args: command arguments
  * Description: variables globally available in the prog
  */
 typedef struct global_s
 {
 	char *command;
 	FILE *script;
+	char *args;
 }
 extern global_s globals;
 void _push(stack_t **head, unsigned int number);
+void addnode(stack_t **head, int n);
 void _pall(stack_t **head, unsigned int number);
 int run(char *command, stack_t **head, unsigned int counter, FILE *script);
 

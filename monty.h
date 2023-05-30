@@ -70,6 +70,7 @@ void _div(stack_t **head, unsigned int number);
 void _mul(stack_t **head, unsigned int number);
 void _mod(stack_t **head, unsigned int number);
 void _pchar(stack_t **head, unsigned int number);
+void _pstr(stack_t **head, unsigned int number);
 /* int getline(char **lineptr, size_t *n, FILE *stream); */
 
 #endif

@@ -62,6 +62,7 @@ void _pall(stack_t **head, unsigned int number);
 int run(char *command, stack_t **head, unsigned int counter, FILE *script);
 void _pint(stack_t **head, unsigned int number);
 void _pop(stack_t **head, unsigned int number);
+void _swap(stack_t **head, unsigned int number);
 /* int getline(char **lineptr, size_t *n, FILE *stream); */
 
 #endif
